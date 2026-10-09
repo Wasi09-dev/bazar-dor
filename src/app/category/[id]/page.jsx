@@ -7,10 +7,6 @@ const CategoryProducts = async ({ params }) => {
   const data = await res.json();
   const products = Array.isArray(data) ? data : data.products || [];
 
-  if (!products.length) {
-    return <p className="text-gray-500">No products found.</p>;
-  }
-
   const { categoryIcon, categoryNameBn } = products[0];
   const count = products.length.toLocaleString('bn-BD');
 
@@ -34,7 +30,7 @@ const CategoryProducts = async ({ params }) => {
 
 const Category = ({ params }) => {
   return (
-    <main className="max-w-6xl mx-auto px-4 py-8">
+    <main className="w-full max-w-6xl mx-auto px-4 py-8">
       <Suspense fallback={<p className="text-gray-500">Loading...</p>}>
         <CategoryProducts params={params} />
       </Suspense>
