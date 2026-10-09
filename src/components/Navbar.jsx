@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = async() => {
+  "use cache";
     const data = new Date().toLocaleDateString('bn-BD',{
         dateStyle: 'full',
     })
