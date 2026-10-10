@@ -1,9 +1,9 @@
 import Banner from "@/components/Banner";
-import Marquee from "@/components/Marquee";
 import ProductCard from "@/components/ProductCard";
 
 
 export default async function Home() {
+  "use cache";
   const res = await fetch("https://api.api-store.workers.dev/api/bazardor/products")
   const products = await res.json()
   const increased = products.filter((p) => p.change.dir === "up")
@@ -13,7 +13,7 @@ const decreased = products.filter((p) => p.change.dir === "down")
   return (
     <div>
       
-      <Marquee />
+      
       <Banner />
       <main id="prices" className="max-w-6xl mx-auto px-4 pb-10">
   <section>

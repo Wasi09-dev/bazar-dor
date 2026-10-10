@@ -2,6 +2,7 @@ import ProductCard from '@/components/ProductCard';
 import React, { Suspense } from 'react';
 
 const CategoryProducts = async ({ params }) => {
+    "use cache";
   const { id } = await params;
   const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${id}`);
   const data = await res.json();

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const unitBn = { kg: "কেজি", litre: "লিটার", dozen: "ডজন", piece: "পিস" };
 const toBn = (n) => Number(n).toLocaleString("bn-BD");
 
@@ -10,7 +12,10 @@ const ProductCard = ({ product }) => {
 const t = trend[product.change.dir] ?? trend.same;
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-4">
+    <Link
+  href={`/products/${product.id}`}
+  className="block rounded-2xl border border-gray-200 bg-white p-4 transition hover:shadow-md"
+>
       
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-xl">
@@ -37,7 +42,7 @@ const t = trend[product.change.dir] ?? trend.same;
   {t.icon} {toBn(product.change.pct)}%
 </span>
       </div>
-    </div>
+    </Link>
   );
 };
 
