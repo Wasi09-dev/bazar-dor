@@ -10,7 +10,7 @@ import { authClient } from "@/lib/auth-client";
 const inputClass =
   "w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100";
 
-// ইউজার কোন পেজ থেকে এসেছে সেটা ঠিকানা থেকে পড়ে নেয়
+
 const getCallbackURL = () => {
   if (typeof window === "undefined") return "/";
   const params = new URLSearchParams(window.location.search);

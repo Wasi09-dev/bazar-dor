@@ -16,13 +16,10 @@ const user = session?.user
   <div className="avatar">
     <div className="ring-primary ring-offset-base-100 w-9 rounded-full ring-2 ring-offset-2">
       <img alt="Avatar" referrerPolicy="no-referrer" src={user?.image} />
-    </div>kothai sign
+    </div>
   </div>
   <span>{user?.name}</span>
 </Link>
-                    <button className="btn-error" onClick={() => authClient.signOut()}>
-                        Sign out
-                    </button>
                 </div>
             ) : (
                 <>

@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
 
 export function proxy(request) {
-  console.log("proxy চলছে:", request.nextUrl.pathname);
   const sessionCookie = getSessionCookie(request);
 
   if (!sessionCookie) {
