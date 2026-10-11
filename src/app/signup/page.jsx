@@ -42,7 +42,7 @@ router.refresh();
   };
 
   const handleSocial = async (provider) => {
-    await authClient.signIn.social({ provider, callbackURL: new URLSearchParams(window.location.search).get("callbackURL") || "/", });
+    await authClient.signIn.social({ provider, callbackURL: "/" });
   };
 
   return (
