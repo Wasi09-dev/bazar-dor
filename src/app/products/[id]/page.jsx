@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-
+import { Suspense } from "react";
 const toBn = (n) => Number(n).toLocaleString("bn-BD");
 const unitBn = { kg: "কেজি", litre: "লিটার", dozen: "ডজন", piece: "পিস" };
 const money = (n) =>
@@ -14,8 +14,8 @@ const trend = {
   same: { icon: "—", word: "অপরিবর্তিত", cls: "text-gray-500" },
 };
 
-const ProductDetail = async ({ params }) => {
-    "use cache";
+const ProductContent = async ({ params }) => {
+    
   const { id } = await params;
   const res = await fetch(
     `https://api.api-store.workers.dev/api/bazardor/products/${id}`
@@ -124,5 +124,12 @@ return (
     </>
   );
 };
+const ProductDetail = ({ params }) => {
+  return (
+    <Suspense fallback={<div>লোড হচ্ছে...</div>}>
+      <ProductContent params={params} />
+    </Suspense>
+  );
+};
+
 export default ProductDetail;
-    
