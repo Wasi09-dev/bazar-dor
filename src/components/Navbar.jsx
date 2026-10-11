@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import UserInfo from "./UserInfo";
 
 const Navbar = async() => {
   "use cache";
@@ -29,18 +30,7 @@ const Navbar = async() => {
           </div>
         </Link>
         <div className="flex items-center gap-5">
-          <Link
-            href="/signin"
-            className="text-sm font-medium text-gray-700 hover:text-green-700"
-          >
-            Sign In
-          </Link>
-          <Link
-            href="/signup"
-            className="rounded-lg bg-green-700 px-5 py-2 text-sm font-medium text-white hover:bg-green-800"
-          >
-            Sign Up
-          </Link>
+        <UserInfo />
         </div>
       </div>
       <nav className="border-t border-gray-200">

@@ -31,7 +31,7 @@ const ProductDetail = async ({ params }) => {
   const maxPrice = Math.max(...product.markets.map((m) => m.max));
 return (
     <>
-     <nav className="mb-4 text-xs text-gray-500">
+     <nav className="mb-4 text-sm font-bold text-gray-500 ml-9 mt-2">
         <Link href="/" className="hover:text-green-700">হোম</Link>
         {" > "}
         <Link href={`/category/${product.category}`} className="hover:text-green-700">

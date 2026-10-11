@@ -4,7 +4,7 @@ import React, { Suspense } from 'react';
 const CategoryProducts = async ({ params }) => {
     "use cache";
   const { id } = await params;
-  const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${id}`);
+  const res = await fetch(`https://openapi.programming-hero.com/api/bazardor/products?category=${id}`);
   const data = await res.json();
   const products = Array.isArray(data) ? data : data.products || [];
 

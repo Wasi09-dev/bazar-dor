@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import MarqueeText from "react-marquee-text"
 import "react-marquee-text/dist/styles.css"
@@ -14,8 +15,9 @@ const toBn = (n) => Number(n).toLocaleString("bn-BD");
       {data.map((item) => {
         const isUp = item.change.dir === "up";
         return (
-          <span
+          <Link
             key={item.id}
+            href={`/products/${item.id}`}
             className="mx-6 inline-flex items-center gap-2 text-sm text-gray-700"
           >
             <span>{item.categoryIcon}</span>
@@ -30,7 +32,7 @@ const toBn = (n) => Number(n).toLocaleString("bn-BD");
             >
               {isUp ? "▲" : "▼"} {toBn(item.change.pct)}%
             </span>
-          </span>
+          </Link>
         );
       })}
     </MarqueeText>
